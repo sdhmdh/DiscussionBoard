@@ -1,0 +1,62 @@
+body {
+  padding: 10px;
+  font-family: sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+input[type=button]{
+  margin-right:20px
+}
+
+input[type=text]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.postButton{
+  height: 40px;
+  width: 65px;
+}
+
+.logoutButton{
+    float: right;
+    height: 35px;
+    width: 65px;
+    margin-top: 10px;
+}
+.discussionBox{
+  width: 70%;
+  height: 90px;
+  background-color: #f6f6f6;
+  padding: 20px;
+  margin-left: 13%;
+  margin-bottom: 15px;
+}
+.errmsg{
+  margin-top: 5px;
+  color:red;
+}
+.ahref{
+  font-weight: bolder;
+}
+
+.discussionContainer{
+  margin-left: 40%;
+  margin-top: 5%;
+}

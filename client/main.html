@@ -1,0 +1,63 @@
+<head>
+  <title>Demo</title>
+</head>
+<body>
+  {{> login}}
+</body>
+<template name="login">
+  {{#if currentUser}}
+      {{> DiscussionBoard}}
+  {{else}}
+  <h1 style="text-align:center">Welcome to DiscussionBoard-App!</h1>
+  <div class="discussionContainer">
+    <div>
+        {{#if register}}
+        <h4 style="margin-left:87px">Register</h4>
+        <form style="width:30%" action="">
+          <label for="fname">Email*</label>
+          <input id ="email" type="text" name="email" placeholder="Enter email">
+          <label for="password">Password*</label>
+          <input id ="password" type="password" name="password" placeholder="Enter password">
+          <input type="button" id="register" value="Register">
+          <a id ="login" class="ahref" href="">Login</a>
+      </form>
+        {{else}}
+        <h4 style="margin-left:87px">Login</h4>
+        <form style="width:30%" action="">
+            <label for="fname">Email*</label>
+            <input id ="lemail" type="text" name="email" placeholder="Enter email">
+            <label for="password">Password*</label>
+            <input id ="lpassword" type="password" name="password" placeholder="Enter password">
+            <input type="button" id="login" value="Login">
+            <a id ="register" class="ahref" href="">Register</a>
+        </form>
+        {{/if}}
+    </div>
+    <div class="errmsg"></div>
+  </div>
+  {{/if}}
+</template>
+<template name="DiscussionBoard">
+  <div style="text-align:center">
+    <input id ="comment" style="width:50%;margin-right:5px;margin-bottom:20px" type="text" name="text" placeholder="Enter comment">
+    <span><button class="postButton">POST</button></span><span></span>
+    <input class="logoutButton" type="button" id="logout" value="Logout">
+    <div class="errmsg"></div>
+    <h4 >Posted Comments</h4>
+    {{#each comments}}
+    <div class="discussionBox">
+      <div>
+        <b>Comment - </b>{{comment}} 
+      </div>
+      <div>
+        <b>Email - </b>{{email}}
+      </div>
+      <div>
+        <b>Posted Date - </b>{{createdAt}} 
+      </div>
+    </div>
+    {{else}}
+      <div>No comments added until now.</div>
+    {{/each}}
+  </div>
+</template>
