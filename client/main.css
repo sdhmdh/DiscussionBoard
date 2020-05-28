@@ -1,34 +1,14 @@
 body {
-  padding: 10px;
-  font-family: sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f6f5f7!important;
 }
 * {
   box-sizing: border-box;
 }
-input[type=button]{
-  margin-right:20px
-}
-
-input[type=text]{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+label {
   display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  margin-bottom: 0!important;
 }
-
-input[type=password]{
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
 .postButton{
   height: 40px;
   width: 65px;
@@ -52,11 +32,73 @@ input[type=password]{
   margin-top: 5px;
   color:red;
 }
-.ahref{
-  font-weight: bolder;
+.noAccText{
+    font-size :14px;
+    font-weight:200;
+    text-align:center;
+    margin-top:20px;
+}
+
+.signUp{
+  cursor: pointer;
+  color:darkcyan;
+  text-decoration: underline!important;
+  margin-left:5px
 }
 
 .discussionContainer{
   margin-left: 40%;
   margin-top: 5%;
+}
+
+.signInContainer{
+  padding:148px;
+}
+.loginHeader{
+  font-family: serif;
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 25px;
+  color: darkcyan;
+}
+
+.logoText{
+  background-color: darkcyan;
+  width: inherit;
+  height:625px
+}
+
+input[type="button"]{
+  background-color: darkcyan!important;
+}
+
+.headerText{
+  padding: 40px;
+  text-align: center;
+  font-size: 33px;
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+}
+
+.logoImg{
+  width: 40px;
+  margin: 0 0 20px 5px;
+}
+
+.tickImg{
+  width: 18px;
+  margin-right: 7px;
+}
+.features{
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.featureText{
+  color: white;
+  font-weight: 100;
+}
+.row{
+  margin-right: 0!important;
 }

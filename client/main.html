@@ -1,63 +1,93 @@
 <head>
   <title>Demo</title>
 </head>
+
 <body>
   {{> login}}
 </body>
 <template name="login">
   {{#if currentUser}}
-      {{> DiscussionBoard}}
+  {{> DiscussionBoard}}
   {{else}}
-  <h1 style="text-align:center">Welcome to DiscussionBoard-App!</h1>
-  <div class="discussionContainer">
-    <div>
+  <div class="row">
+    <div class="col-md-5 logoText">
+      <div class="headerText">DiscussionBoard<span><img class="logoImg" src="images/comment.png"></span></div>
+      <div class="features">
+        <img class="tickImg" src="images/tick.png"><span class="featureText">Collaborate easily for projects</span>
+      </div>
+      <div class="features">
+        <img class="tickImg" src="images/tick.png"><span class="featureText">Add any number of ideas</span>
+      </div>
+      <div class="features">
+        <img class="tickImg" src="images/tick.png"><span class="featureText">Support for edit and delete comments</span>
+      </div>
+      </div>
+    <div class="col-md-7 signInContainer">
+      <div style="position:absolute;width:400px;margin-left:20%">
         {{#if register}}
-        <h4 style="margin-left:87px">Register</h4>
-        <form style="width:30%" action="">
-          <label for="fname">Email*</label>
-          <input id ="email" type="text" name="email" placeholder="Enter email">
-          <label for="password">Password*</label>
-          <input id ="password" type="password" name="password" placeholder="Enter password">
-          <input type="button" id="register" value="Register">
-          <a id ="login" class="ahref" href="">Login</a>
-      </form>
-        {{else}}
-        <h4 style="margin-left:87px">Login</h4>
-        <form style="width:30%" action="">
-            <label for="fname">Email*</label>
-            <input id ="lemail" type="text" name="email" placeholder="Enter email">
+        <h1 class="loginHeader">Create Account!</h1>
+        <form action="">
+          <div class="form-group">
+            <label for="email">Email address*</label>
+            <input class="form-control" id="email" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
             <label for="password">Password*</label>
-            <input id ="lpassword" type="password" name="password" placeholder="Enter password">
-            <input type="button" id="login" value="Login">
-            <a id ="register" class="ahref" href="">Register</a>
+            <input class="form-control" id="password" name="password" placeholder="Enter password" type="password">
+          </div>
+          <div class="form-group">
+            <label for="passwordr">Password (re-type)*</label>
+            <input class="form-control" id="passwordr" name="password" placeholder="Enter password" type="password">
+          </div>
+          <input type="button" class="btn btn-primary" style="width:100%" id="register" value="Register">
+          <div class="errmsg"></div>
+          <h4 class="noAccText">Already have an account!<span id="login" class="signUp">Please Login</span></h4>
         </form>
+        {{else}}
+        <h1 class="loginHeader">Login to your account!</h1>
+        <form action="">
+          <div class="form-group">
+            <label for="lemail">Email address*</label>
+            <input class="form-control" id="lemail" name="email" placeholder="Enter email">
+          </div>
+          <div class="form-group">
+            <label for="lpassword">Password*</label>
+            <input class="form-control" id="lpassword" name="password" placeholder="Enter password" type="password">
+          </div>
+          <input type="button" class="btn btn-primary" style="width:100%" id="login" value="Login">
+        </form>
+        <div class="errmsg"></div>
+        <h4 class="noAccText">Don't have an account?<span id="register" class="signUp">Register now!</span></h4>
         {{/if}}
+
+      </div>
+
     </div>
-    <div class="errmsg"></div>
   </div>
   {{/if}}
 </template>
 <template name="DiscussionBoard">
   <div style="text-align:center">
-    <input id ="comment" style="width:50%;margin-right:5px;margin-bottom:20px" type="text" name="text" placeholder="Enter comment">
+    <input id="comment" style="width:50%;margin-right:5px;margin-bottom:20px" type="text" name="text"
+      placeholder="Enter comment">
     <span><button class="postButton">POST</button></span><span></span>
     <input class="logoutButton" type="button" id="logout" value="Logout">
     <div class="errmsg"></div>
-    <h4 >Posted Comments</h4>
+    <h4>Posted Comments</h4>
     {{#each comments}}
     <div class="discussionBox">
       <div>
-        <b>Comment - </b>{{comment}} 
+        <b>Comment - </b>{{comment}}
       </div>
       <div>
         <b>Email - </b>{{email}}
       </div>
       <div>
-        <b>Posted Date - </b>{{createdAt}} 
+        <b>Posted Date - </b>{{createdAt}}
       </div>
     </div>
     {{else}}
-      <div>No comments added until now.</div>
+    <div>No comments added until now.</div>
     {{/each}}
   </div>
 </template>

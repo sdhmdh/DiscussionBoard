@@ -2,6 +2,7 @@ import { Template } from 'meteor/templating';
 import { Session } from 'meteor/session'
 import { Comments } from '../imports/api/comments.js';
 import './main.html';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 Template.login.onCreated(function(){
   Session.set("register",false)
@@ -25,8 +26,13 @@ Template.login.events({
     Session.set("register",true);
     var email = $("#email").val()
     var pass = $("#password").val();
-    if(email == "" || pass == ""){
+    var repass = $("#passwordr").val();
+    if(email == "" || pass == "" || repass == ""){
       $(".errmsg").text("(*) fields are mandatory")
+      return
+    }
+    if(pass != repass){
+      $(".errmsg").text("Passwords do not match!")
       return
     }
     if(email && pass){
