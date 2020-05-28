@@ -55,9 +55,10 @@ label {
   padding:148px;
 }
 .loginHeader{
-  font-family: serif;
+  font-family: Helvetica;
+  font-weight: bold;
   text-align: center;
-  font-size: 26px;
+  font-size: 23px;
   margin-bottom: 25px;
   color: darkcyan;
 }
@@ -75,7 +76,7 @@ input[type="button"]{
 .headerText{
   padding: 40px;
   text-align: center;
-  font-size: 33px;
+  font-size: 38px;
   color: white;
   font-weight: bold;
   margin-top: 40px;
@@ -101,4 +102,13 @@ input[type="button"]{
 }
 .row{
   margin-right: 0!important;
+}
+
+.discussImg{
+  width: 335px;
+  margin-left: 105px;
+  margin-top: 35px;
+}
+.featureContainer{
+  margin-top: -24px;
 }

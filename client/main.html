@@ -12,6 +12,7 @@
   <div class="row">
     <div class="col-md-5 logoText">
       <div class="headerText">DiscussionBoard<span><img class="logoImg" src="images/comment.png"></span></div>
+      <div class="featureContainer">
       <div class="features">
         <img class="tickImg" src="images/tick.png"><span class="featureText">Collaborate easily for projects</span>
       </div>
@@ -21,11 +22,13 @@
       <div class="features">
         <img class="tickImg" src="images/tick.png"><span class="featureText">Support for edit and delete comments</span>
       </div>
+    </div>
+      <img class="discussImg" src="images/discuss.jpg">
       </div>
     <div class="col-md-7 signInContainer">
       <div style="position:absolute;width:400px;margin-left:20%">
         {{#if register}}
-        <h1 class="loginHeader">Create Account!</h1>
+        <h1 class="loginHeader">Create Account</h1>
         <form action="">
           <div class="form-group">
             <label for="email">Email address*</label>
@@ -44,7 +47,7 @@
           <h4 class="noAccText">Already have an account!<span id="login" class="signUp">Please Login</span></h4>
         </form>
         {{else}}
-        <h1 class="loginHeader">Login to your account!</h1>
+        <h1 class="loginHeader">Login to your account</h1>
         <form action="">
           <div class="form-group">
             <label for="lemail">Email address*</label>
@@ -59,9 +62,7 @@
         <div class="errmsg"></div>
         <h4 class="noAccText">Don't have an account?<span id="register" class="signUp">Register now!</span></h4>
         {{/if}}
-
       </div>
-
     </div>
   </div>
   {{/if}}
