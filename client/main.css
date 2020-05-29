@@ -1,6 +1,6 @@
 body {
   font-family: 'Montserrat', sans-serif;
-  background-color: #f6f5f7!important;
+  background-color: white!important;
 }
 * {
   box-sizing: border-box;
@@ -10,8 +10,11 @@ label {
   margin-bottom: 0!important;
 }
 .postButton{
-  height: 40px;
-  width: 65px;
+  font-weight: 500!important;
+  background-color: darkcyan!important;
+  height: 52px!important;
+  margin-top: 1px!important;
+  margin-left: 5px!important;
 }
 
 .logoutButton{
@@ -21,12 +24,11 @@ label {
     margin-top: 10px;
 }
 .discussionBox{
-  width: 70%;
+  width: 100%;
   height: 90px;
-  background-color: #f6f6f6;
-  padding: 20px;
-  margin-left: 13%;
-  margin-bottom: 15px;
+  background-color: #f6f5f7;
+  margin-bottom: 20px;
+  padding: 10px 20px 0px 30px;
 }
 .errmsg{
   margin-top: 5px;
@@ -47,8 +49,8 @@ label {
 }
 
 .discussionContainer{
-  margin-left: 40%;
-  margin-top: 5%;
+  margin-top: 30px;
+  padding-bottom:20px
 }
 
 .signInContainer{
@@ -66,7 +68,7 @@ label {
 .logoText{
   background-color: darkcyan;
   width: inherit;
-  height:625px
+  height:100vh
 }
 
 input[type="button"]{
@@ -105,10 +107,74 @@ input[type="button"]{
 }
 
 .discussImg{
-  width: 335px;
-  margin-left: 105px;
-  margin-top: 35px;
+  width: 70%;
+  margin-top: 27px;
+  max-height: 270px;
+  margin-left: 63px;
 }
 .featureContainer{
   margin-top: -24px;
+}
+.headerNav{
+  background-color:darkcyan;
+  position: fixed!important;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.NavText{
+  color: white!important;
+  font-weight: bold;
+
+}
+.navbar img{
+  width: 15px;
+  margin: 0px 0 11px 5px;
+}
+.container-fluid{
+  padding-top:90px;
+}
+
+.searchBar{
+  height:55px!important;
+  border-radius:5px!important
+}
+
+.padding{
+  padding-right: 200px!important;
+  padding-left: 200px!important;
+}
+.commentData{
+  margin-left:50px
+}
+.center{
+  text-align:center
+}
+.postedComment{
+  font-weight: 600;
+  color: #49919e;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.postedBy{
+  font-size: 10px;
+}
+.postedTime{
+  margin-top:5px;
+  font-size: 11px;
+}
+.avatar{
+  margin-left:auto;
+  margin-right:15px;
+}
+.avatar img{
+  height: 35px;
+  margin-top: 5px;
+}
+
+.cardImg{
+  max-width:335px;
+  min-width:50px;
 }

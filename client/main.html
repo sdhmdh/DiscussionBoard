@@ -6,25 +6,35 @@
   {{> login}}
 </body>
 <template name="login">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"
+    integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"
+    integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1"
+    crossorigin="anonymous"></script>
   {{#if currentUser}}
   {{> DiscussionBoard}}
   {{else}}
   <div class="row">
-    <div class="col-md-5 logoText">
+    <div class="col-md-5 logoText cardImg">
       <div class="headerText">DiscussionBoard<span><img class="logoImg" src="images/comment.png"></span></div>
       <div class="featureContainer">
-      <div class="features">
-        <img class="tickImg" src="images/tick.png"><span class="featureText">Collaborate easily for projects</span>
+        <div class="features">
+          <img class="tickImg" src="images/tick.png"><span class="featureText">Collaborate easily for projects</span>
+        </div>
+        <div class="features">
+          <img class="tickImg" src="images/tick.png"><span class="featureText">Add any number of ideas</span>
+        </div>
+        <div class="features">
+          <img class="tickImg" src="images/tick.png"><span class="featureText">Support for edit and delete
+            comments</span>
+        </div>
       </div>
-      <div class="features">
-        <img class="tickImg" src="images/tick.png"><span class="featureText">Add any number of ideas</span>
-      </div>
-      <div class="features">
-        <img class="tickImg" src="images/tick.png"><span class="featureText">Support for edit and delete comments</span>
-      </div>
+        <img class="discussImg" src="images/discuss.jpg">
     </div>
-      <img class="discussImg" src="images/discuss.jpg">
-      </div>
     <div class="col-md-7 signInContainer">
       <div style="position:absolute;width:400px;margin-left:20%">
         {{#if register}}
@@ -68,27 +78,55 @@
   {{/if}}
 </template>
 <template name="DiscussionBoard">
-  <div style="text-align:center">
-    <input id="comment" style="width:50%;margin-right:5px;margin-bottom:20px" type="text" name="text"
-      placeholder="Enter comment">
-    <span><button class="postButton">POST</button></span><span></span>
-    <input class="logoutButton" type="button" id="logout" value="Logout">
-    <div class="errmsg"></div>
-    <h4>Posted Comments</h4>
-    {{#each comments}}
-    <div class="discussionBox">
-      <div>
-        <b>Comment - </b>{{comment}}
-      </div>
-      <div>
-        <b>Email - </b>{{email}}
-      </div>
-      <div>
-        <b>Posted Date - </b>{{createdAt}}
-      </div>
+  <nav class="navbar navbar-expand-lg  navbar-expand-sm headerNav">
+    <a href="#" class="navbar-brand NavText">DiscussionBoard<span><img src="images/comment.png"></span></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle NavText" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+            {{CurrentUser}}
+          </a>
+          <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="navbarDropdown">
+            <a id="logout" class="dropdown-item" href="#">Logout</a>
+          </div>
+        </li>
+      </ul>
     </div>
-    {{else}}
-    <div>No comments added until now.</div>
-    {{/each}}
+  </nav>
+  <div class="container-fluid padding">
+    <form>
+      <div class="input-group">
+        <input id="comment" type="text" name="text" class="form-control searchBar" placeholder="Enter comment">
+        <div class="input-froup-btn">
+          <button class="btn btn-primary postButton" type="submit">Post</button>
+        </div>
+      </div>
+    </form>
+    <div class="discussionContainer">
+      {{#each comments}}
+      <div class="discussionBox">
+        <div class="row">
+          <div class="center">
+            {{#if upvoted this._id}}
+            <img class="removeVote" src="images/voted.png">
+            {{else}}
+            <img class="addVote" src="images/upvote.png">
+            {{/if}}
+            <div>
+              {{totalUpvotes this._id}}</div>
+          </div>
+          <div class="commentData">
+            <div class="postedComment">{{comment}}</div>
+            <div class="postedBy">posted by <b>{{email}}</b></div>
+            <div class="postedTime">{{postedAt createdAt}}</div>
+          </div>
+          <div class="avatar"><img src="images/avatar.png"></div>
+        </div>
+      </div>
+      {{else}}
+      <div>No comments added until now.</div>
+      {{/each}}
+    </div>
   </div>
 </template>
