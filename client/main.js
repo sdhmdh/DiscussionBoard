@@ -119,6 +119,7 @@ Template.DiscussionBoard.events({
     Meteor.logout()
   },
   'click .addVote'(){
+    //method to add userId's to upvotes array in Comments table
     Meteor.call("addUpvotes",this._id,Meteor.userId(),function(error,success){
       if(error){
         console.log(error);
@@ -128,6 +129,7 @@ Template.DiscussionBoard.events({
     })
   },
   'click .removeVote'(){
+    //method to remove userId's to upvotes array in Comments table
     Meteor.call("removeUpvotes",this._id,Meteor.userId(),function(error,success){
       if(error){
         console.log(error);
