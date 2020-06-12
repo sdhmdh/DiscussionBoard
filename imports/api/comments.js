@@ -16,6 +16,7 @@ Meteor.methods({
         Comments.update(
             { _id: id },
             { $pull: { upvotes:  userId} }
+            
          )
     }
   })
